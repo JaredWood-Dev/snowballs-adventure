@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - primary: {fileID: 11400000, guid: 4f642ecdbedb82943baba6a5f69db0e5, type: 2}
-  - secondary: {fileID: 11400000, guid: 43037793258ec704cad93ebb83dd7404, type: 2}
+  - primary: {instanceID: 0}
+  - secondary: {instanceID: 0}
   - hat: {instanceID: 0}
   - playerHead: {instanceID: 0}
   executionOrder: 0

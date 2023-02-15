@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5ed8ce700672b2448c4d7d630047923, type: 3}
-  m_Name: Fighter
+  m_Name: Wizard
   m_EditorClassIdentifier: 
-  className: Fighter
-  primary: {fileID: 11400000, guid: 4f642ecdbedb82943baba6a5f69db0e5, type: 2}
-  secondary: {fileID: 11400000, guid: 43037793258ec704cad93ebb83dd7404, type: 2}
-  primaryCooldown: 1
-  secondaryCooldown: 2
+  className: Wizard
+  primary: {fileID: 11400000, guid: aa0f76677e2694344bd3d7255a3559a4, type: 2}
+  secondary: {fileID: 11400000, guid: c1d3491c6664a34428ee630802aaff0c, type: 2}
+  primaryCooldown: 2
+  secondaryCooldown: 10
   hat: {fileID: 0}
   playerHead: {fileID: 0}
