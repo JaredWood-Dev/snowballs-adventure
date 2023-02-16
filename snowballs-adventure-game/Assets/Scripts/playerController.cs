@@ -24,6 +24,11 @@ public class playerController : MonoBehaviour
     //Jump buffering
     private const float bufferTime = 1f;
     private float jumpBuffer = bufferTime;
+    
+    //Variable Jump height
+    private const float variableTime = 1f;
+    public float variableTimer = variableTime;
+    private const float defaultGravity = 3f;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -46,7 +51,7 @@ public class playerController : MonoBehaviour
         float runForce = rb.mass * ((maxSpeed - Mathf.Abs(rb.velocity.x)) /  (Time.deltaTime * 1000 ));
 
         //Left-Right Movement
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") && currentStatus == playerStatus.onGround)
         {
             //Add force, update animation, update scale
             rb.AddForce(runForce * Vector2.right);
@@ -56,7 +61,7 @@ public class playerController : MonoBehaviour
                 animator.SetBool("isRunning", true);
             }
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey("a") && currentStatus == playerStatus.onGround)
         {
             //Add force, update animation, update scale
             rb.AddForce(runForce * Vector2.left);
@@ -89,6 +94,8 @@ public class playerController : MonoBehaviour
         {
             currentStatus = playerStatus.onGround;
             animator.SetBool("onGround", true);
+            //If on the gorund, reset variable jump hight timer
+            variableTimer = variableTime;
         }
         else
         {
@@ -116,6 +123,18 @@ public class playerController : MonoBehaviour
         {
             rb.AddForce(dampeningConstant * new Vector2(rb.velocity.x, 0).normalized * -1);
         }
+        
+        //Variable Jump Height
+        //If the player holds the jump button, gravity continues to be off until the timer ends.
+        if (Input.GetKey("space") && variableTimer > 0)
+        {
+            rb.gravityScale = 0;
+        }
+        else
+        {
+            rb.gravityScale = defaultGravity;
+        }
+        variableTimer-= Time.deltaTime * 10;
     }
 
     void jump()
