@@ -24,12 +24,16 @@ public class classController : MonoBehaviour
     private float primaryTimer = 0;
     private float secondaryTimer = 0;
 
+    [Header("Use this to start with a certain class")]
+    public int testClass;
+
+
     // Start is called before the first frame update
     void Start()
     {
         //sets to the current class to a random class (not the last one (cleric))
         //currentClass = classList[Random.Range(0, 12)];    
-        setClass(classList[1]);    //this line is used until we have all the clases set up
+        setClass(classList[testClass]);    //this line is used until we have all the clases set up
 
         foreach (Class i in classList)
         {
@@ -78,5 +82,6 @@ public class classController : MonoBehaviour
         secondary = c.secondary;
         primaryCooldown = c.primaryCooldown;
         secondaryCooldown = c.secondaryCooldown;
+        //this should also set the hat sprite, and held weapon
     }
 }

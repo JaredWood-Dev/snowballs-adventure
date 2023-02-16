@@ -35,13 +35,14 @@ public class Ability : ScriptableObject
                 //this should call to the weapon controller and the animation handler (for the arms)
                 break;
             case Type.ranged:
-                //this should call to the weapon controller, the animation handler (for the arms), and the projectile spawner
+                ProjectileSpawner.spawnProjectile(abilityName, damage);
+                //this should call to the animation handler (for the arms) and the projectile spawner
                 break;
             case Type.util:
-                //this should call to the weapon controller, the animation handler (for the arms), and ???
+                //this should call to the animation handler (for the arms) and character controller?
                 break;
             case Type.summon:
-                //this should call to the weapon controller, the animation handler (for the arms), and the npc spawner
+                //this should call to the animation handler (for the arms) and the npc spawner
                 break;
 
         }
