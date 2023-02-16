@@ -25,6 +25,26 @@ public class Ability : ScriptableObject
     public bool canMoveWhileUsing;
 
     //the Ability class should also run the animation trigger of the "abilityName"
+    public void activateAbility()
+    {
+        
+        Debug.Log(abilityName);
+        switch (abilityType)
+        {
+            case Type.melee:
+                //this should call to the weapon controller and the animation handler (for the arms)
+                break;
+            case Type.ranged:
+                //this should call to the weapon controller, the animation handler (for the arms), and the projectile spawner
+                break;
+            case Type.util:
+                //this should call to the weapon controller, the animation handler (for the arms), and ???
+                break;
+            case Type.summon:
+                //this should call to the weapon controller, the animation handler (for the arms), and the npc spawner
+                break;
 
+        }
+    }
 
 }
