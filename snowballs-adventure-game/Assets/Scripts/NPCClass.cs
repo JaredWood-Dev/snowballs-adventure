@@ -17,7 +17,7 @@ public class NPCClass
     public Rigidbody2D rb;
 
 
-    
+
 
     //Constructor for creating new NPCs
     public NPCClass(int hp, float ms, bool ally, float ad, float fd, GameObject npc) {
@@ -68,6 +68,15 @@ public class NPCClass
         if (Vector2.Distance(npc.transform.position, player.transform.position) < attackDistance)
         {
             Attack();
+        }
+        
+        //If stuck on a tile(i.e raycast hits a tile near its foot), call jump function
+        //To be implemented later
+        //NOT WORKING!
+        if (npc.GetComponent<Rigidbody2D>().velocity.x < 0.01 && npc.GetComponent<Rigidbody2D>().velocity.x > -0.01)
+        {
+            //Debug.Log("Enemy Jump");
+            //Jump();
         }
     }
     

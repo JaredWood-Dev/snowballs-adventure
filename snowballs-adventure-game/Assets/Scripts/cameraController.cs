@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class cameraController : MonoBehaviour
 {
     public GameObject player;
+    public float minimumCameraHeight = 0;
     void Start()
     {
         
@@ -13,6 +15,6 @@ public class cameraController : MonoBehaviour
     void Update()
     {
         gameObject.transform.position =
-            new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+            new Vector3(player.transform.position.x, Mathf.Clamp(player.transform.position.y, minimumCameraHeight, Single.PositiveInfinity), transform.position.z);
     }
 }

@@ -89,8 +89,10 @@ public class playerController : MonoBehaviour
         }
         
         //Determining when on ground
-        var groundDetection = Physics2D.Raycast(transform.position, Vector2.down, detectionHight, collisionGeometry);
-        if (groundDetection.collider != null)
+        //Create two raycasts to determine if either side of the player's collider is on the ground
+        var groundDetectionA = Physics2D.Raycast(new Vector2(transform.position.x + 0.2f, transform.position.y), Vector2.down, detectionHight, collisionGeometry);
+        var groundDetectionB = Physics2D.Raycast(new Vector2(transform.position.x - 0.2f, transform.position.y), Vector2.down, detectionHight, collisionGeometry);
+        if ((groundDetectionA.collider != null) || groundDetectionB.collider != null )
         {
             currentStatus = playerStatus.onGround;
             animator.SetBool("onGround", true);

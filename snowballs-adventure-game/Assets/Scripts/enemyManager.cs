@@ -16,7 +16,7 @@ public class enemyManager : MonoBehaviour
     public void SpawnEnemy(Vector2 pos)
     {
         GameObject enemyObject = Instantiate(testEnemyPrefab,pos, Quaternion.identity);
-        enemies.Add(new NPCClass(5, 1, false, 2, 10, enemyObject));
+        enemies.Add(new NPCClass(5, 10, false, 2, 10, enemyObject));
         
     }
 
