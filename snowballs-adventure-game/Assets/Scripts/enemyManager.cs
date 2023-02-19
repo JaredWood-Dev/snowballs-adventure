@@ -5,6 +5,14 @@ using UnityEngine;
 //this script will be responsible for spawning in all the enemies, and setting their values.
 public class enemyManager : MonoBehaviour
 {
+    public static enemyManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+
     public GameObject testEnemyPrefab;
     
     

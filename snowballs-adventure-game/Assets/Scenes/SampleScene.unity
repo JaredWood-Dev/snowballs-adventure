@@ -260,7 +260,7 @@ MonoBehaviour:
   hatSR: {fileID: 1560701115}
   weaponSR: {fileID: 976779367}
   weaponT: {fileID: 976779368}
-  testClass: 1
+  testClass: 0
 --- !u!4 &244599303
 Transform:
   m_ObjectHideFlags: 0
@@ -798,6 +798,7 @@ GameObject:
   - component: {fileID: 976779368}
   - component: {fileID: 976779367}
   - component: {fileID: 976779369}
+  - component: {fileID: 976779370}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Player
@@ -884,6 +885,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd15381885cd11b4788d3f84cdfa811f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider: {fileID: 0}
+--- !u!65 &976779370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976779366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.15, z: 0.2}
+  m_Center: {x: 0.01, y: 0.000000059604645, z: 0}
 --- !u!1 &1240918698
 GameObject:
   m_ObjectHideFlags: 0

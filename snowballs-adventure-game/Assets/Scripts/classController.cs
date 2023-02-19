@@ -39,8 +39,8 @@ public class classController : MonoBehaviour
     void Start()
     {
         //sets to the current class to a random class (not the last one (cleric))
-        //currentClass = classList[Random.Range(0, 12)];    
-        setClass(classList[testClass]);    //this line is used until we have all the clases set up
+        setClass(classList[Random.Range(0, 3)]);    
+        //setClass(classList[testClass]);    //this line is used until we have all the clases set up
 
         foreach (Class i in classList)
         {

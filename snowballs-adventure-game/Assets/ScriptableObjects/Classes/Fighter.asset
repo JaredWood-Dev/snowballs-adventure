@@ -18,5 +18,5 @@ MonoBehaviour:
   primaryCooldown: 1
   secondaryCooldown: 2
   hat: {fileID: 21300000, guid: 94765a677b752584180118c9be9cd27b, type: 3}
-  weapon: {fileID: 21300000, guid: 69a27eed0d4d7f74893f64e82acd429a, type: 3}
+  weapon: {fileID: 21300000, guid: ba4a81e3251a1c14093ea3363fcb60e9, type: 3}
   weaponScale: {x: 3, y: 1.5}

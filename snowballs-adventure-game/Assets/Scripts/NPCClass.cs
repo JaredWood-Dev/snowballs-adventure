@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class NPCClass
@@ -85,16 +84,20 @@ public class NPCClass
             //Jump();
         }
 
-        if (hitPoints < 0)
-        {
-            //Play NPC death animation
-            //Remove the NPC after the animation is played
-        }
+        
     }
 
     public void Damage(int damage)
     {
         hitPoints -= damage;
+        
+        if (hitPoints <= 0)
+        {
+            Debug.Log("DEAD");
+            //Play NPC death animation
+            //Remove the NPC after the animation is played
+            
+        }
     }
     
     
