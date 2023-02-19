@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    public static void spawnProjectile(string ability, float damage)
+    public static ProjectileSpawner Instance;
+
+    void Awake()
     {
-        switch (ability)
+        Instance = this;
+    }
+
+    public GameObject magicMissilePrefab;
+
+    public void spawnProjectile(Ability ability, float damage)
+    {
+        
+        switch (ability.abilityName)
         {
             case "MagicMissile":
-                //instantiate magic missile projectile here
-                break;
-            case "Fireball":
-                
+                for (int i = 0; i < ability.amount; i++)
+                {
+                    //instead of spawning at the magic missile prefab transform, will instead spawn at the Weapon position
+                    Instantiate(magicMissilePrefab, new Vector2(-3,-3), Quaternion.identity);
+                }
+
                 break;
             case "Dagger":
+                
+
+
+                break;
+            case "Fireball":
                 
                 break;
             case "Ukulele":

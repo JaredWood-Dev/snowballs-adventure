@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1711269054}
+  minimumCameraHeight: 0
 --- !u!1 &664193917
 GameObject:
   m_ObjectHideFlags: 0
@@ -11065,6 +11066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9924d0af18c19e4593a77b6e6a4f1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicMissilePrefab: {fileID: 7788160063842041314, guid: 14a1b92bf8d92ab4d87be26c424a9238, type: 3}
 --- !u!4 &1952670473
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewAbility", menuName = "Ability")]
 public class Ability : ScriptableObject
 {
+
     //holds the name of the ability
     [Header("Name")]
     public string abilityName;
@@ -22,6 +23,7 @@ public class Ability : ScriptableObject
     [Header("Info")]
     public Type abilityType;
     public float damage;
+    public int amount;
     public bool canMoveWhileUsing;
 
     //the Ability class should also run the animation trigger of the "abilityName"
@@ -35,7 +37,7 @@ public class Ability : ScriptableObject
                 //this should call to the weapon controller and the animation handler (for the arms)
                 break;
             case Type.ranged:
-                ProjectileSpawner.spawnProjectile(abilityName, damage);
+                ProjectileSpawner.Instance.spawnProjectile(this, damage);
                 //this should call to the animation handler (for the arms) and the projectile spawner
                 break;
             case Type.util:
