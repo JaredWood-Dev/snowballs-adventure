@@ -6,6 +6,7 @@ using UnityEngine;
 public class Ability : ScriptableObject
 {
 
+
     //holds the name of the ability
     [Header("Name")]
     public string abilityName;
@@ -34,16 +35,20 @@ public class Ability : ScriptableObject
         switch (abilityType)
         {
             case Type.melee:
+                AnimationHandler.Instance.animateAbility(this);
                 //this should call to the weapon controller and the animation handler (for the arms)
                 break;
             case Type.ranged:
+                AnimationHandler.Instance.animateAbility(this);
                 ProjectileSpawner.Instance.spawnProjectile(this, damage);
                 //this should call to the animation handler (for the arms) and the projectile spawner
                 break;
             case Type.util:
+                AnimationHandler.Instance.animateAbility(this);
                 //this should call to the animation handler (for the arms) and character controller?
                 break;
             case Type.summon:
+                AnimationHandler.Instance.animateAbility(this);
                 //this should call to the animation handler (for the arms) and the npc spawner
                 break;
 

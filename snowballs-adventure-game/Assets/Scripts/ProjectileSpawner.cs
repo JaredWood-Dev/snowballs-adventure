@@ -12,6 +12,7 @@ public class ProjectileSpawner : MonoBehaviour
     }
 
     public GameObject magicMissilePrefab;
+    public Transform weaponTransform;
 
     public void spawnProjectile(Ability ability, float damage)
     {
@@ -21,8 +22,7 @@ public class ProjectileSpawner : MonoBehaviour
             case "MagicMissile":
                 for (int i = 0; i < ability.amount; i++)
                 {
-                    //instead of spawning at the magic missile prefab transform, will instead spawn at the Weapon position
-                    Instantiate(magicMissilePrefab, new Vector2(-3,-3), Quaternion.identity);
+                    Instantiate(magicMissilePrefab, weaponTransform.position, Quaternion.identity);
                 }
 
                 break;

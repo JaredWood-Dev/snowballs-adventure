@@ -24,6 +24,13 @@ public class classController : MonoBehaviour
     private float primaryTimer = 0;
     private float secondaryTimer = 0;
 
+    //these variables hold reference to objects for ease of changing sprites
+    public SpriteRenderer hatSR;
+    public SpriteRenderer weaponSR;
+    public Transform weaponT;
+
+
+
     [Header("Use this to start with a certain class")]
     public int testClass;
 
@@ -82,6 +89,8 @@ public class classController : MonoBehaviour
         secondary = c.secondary;
         primaryCooldown = c.primaryCooldown;
         secondaryCooldown = c.secondaryCooldown;
-        //this should also set the hat sprite, and held weapon
-    }
+        hatSR.sprite = c.hat;
+        weaponSR.sprite = c.weapon;
+        weaponT.localScale = c.weaponScale;
+}
 }

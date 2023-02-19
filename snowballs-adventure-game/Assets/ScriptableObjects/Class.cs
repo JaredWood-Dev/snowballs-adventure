@@ -22,6 +22,9 @@ public class Class : ScriptableObject
     //Hold the images which the player uses when putting on the hat, and when displaying the hat on the player
     [Header("Sprites")]
     public Sprite hat;
-    public Sprite playerHead;
+    public Sprite weapon;
+
+    [Header("Scale")]
+    public Vector2 weaponScale;
 
 }
