@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class NPCClass
@@ -57,7 +58,12 @@ public class NPCClass
         //Make an attack based on the ability system
         //-Basic Attack
         //-Ranged Attack
-        Debug.Log("Attack");
+        RaycastHit2D attack = Physics2D.BoxCast(npc.transform.position, new Vector2(4.5f,4), 0f, npc.transform.localScale.normalized);
+        Debug.DrawLine(npc.transform.position, attack.point);
+        if (attack.collider.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player Hit");
+        }
     }
 
     //this method is where the NPC will decide what functions to use.
@@ -78,7 +84,19 @@ public class NPCClass
             //Debug.Log("Enemy Jump");
             //Jump();
         }
+
+        if (hitPoints < 0)
+        {
+            //Play NPC death animation
+            //Remove the NPC after the animation is played
+        }
     }
+
+    public void Damage(int damage)
+    {
+        hitPoints -= damage;
+    }
+    
     
 
 }
